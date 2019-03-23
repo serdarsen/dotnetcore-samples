@@ -1,7 +1,8 @@
-﻿namespace InheritanceSample.Repositories
+﻿using InheritanceSample.Contracts;
+
+namespace InheritanceSample.Repositories
 {
-    public class BaseUserRepository
+    public class BaseUserRepository : IBaseUserRepository
     {
-        
     }
 }

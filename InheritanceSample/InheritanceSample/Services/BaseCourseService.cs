@@ -1,15 +1,19 @@
 ﻿using InheritanceSample.Contracts;
-using InheritanceSample.Factories;
 
 namespace InheritanceSample.Services
 {
-    public class BaseCourseService<TIUserFactory> where TIUserFactory : IBaseUserFactory
+    public class BaseCourseService<TIBaseUserFactory, TIBaseUserRepository> 
+                                   where TIBaseUserFactory : IBaseUserFactory
+                                   where TIBaseUserRepository : IBaseUserRepository
+                                                                    
     {
-        private readonly TIUserFactory _iBaseUserFactory;
+        private readonly TIBaseUserFactory _iBaseUserFactory;
+        private readonly TIBaseUserRepository _iBaseUserRepository;
 
-        public BaseCourseService(TIUserFactory iBaseUserFactory)
+        public BaseCourseService(TIBaseUserFactory iBaseUserFactory, TIBaseUserRepository iBaseUserRepository)
         {
             _iBaseUserFactory = iBaseUserFactory;
+            _iBaseUserRepository = iBaseUserRepository;
         }
 
         public bool CreateUser()

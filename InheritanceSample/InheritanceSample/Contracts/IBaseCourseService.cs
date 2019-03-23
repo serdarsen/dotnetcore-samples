@@ -1,4 +1,7 @@
-﻿namespace InheritanceSample.Services
+﻿using System.Collections.Generic;
+using InheritanceSample.Models;
+
+namespace InheritanceSample.Contracts
 {
     public interface IBaseCourseService
     {

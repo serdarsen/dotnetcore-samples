@@ -27,6 +27,7 @@ namespace InheritanceSample.Controllers
             _iJavaCourseService.CreateUser();
             _iJavaCourseService.UpgradeUser();
             _iJavaCourseService.DeleteUser();
+            _iJavaCourseService.GetUserList();
         }
 
         //[HttpGet]

@@ -1,4 +1,5 @@
 ﻿using System;
+using InheritanceSample.Contracts;
 
 namespace InheritanceSample.Factories
 {

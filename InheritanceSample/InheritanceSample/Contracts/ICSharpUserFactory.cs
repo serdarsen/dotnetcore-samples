@@ -1,6 +1,4 @@
-﻿using InheritanceSample.Contracts;
-
-namespace InheritanceSample.Factories
+﻿namespace InheritanceSample.Contracts
 {
     public interface ICSharpUserFactory : IBaseUserFactory
     {
