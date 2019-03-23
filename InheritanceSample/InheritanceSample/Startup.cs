@@ -1,5 +1,5 @@
 ﻿using InheritanceSample.Factories;
-using InheritanceSample.Repositories;
+using InheritanceSample.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -28,9 +28,10 @@ namespace InheritanceSample
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddTransient<IBooksRepository, InMemoryBooksRepository>();
-            services.AddTransient<ITranslationBookFactory, TranslationBookFactory>();
-            services.AddTransient<IBookFactory, BookFactory>();
+            services.AddTransient<ICSharpUserFactory, CSharpUserFactory>();
+            services.AddTransient<IJavaUserFactory, JavaUserFactory>();
+            services.AddTransient<IJavaCourse, JavaCourse>();
+            services.AddTransient<ICSharpCourse, CSharpCourse>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
