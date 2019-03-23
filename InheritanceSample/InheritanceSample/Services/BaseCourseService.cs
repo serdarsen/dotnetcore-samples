@@ -1,12 +1,13 @@
-﻿using InheritanceSample.Factories;
+﻿using InheritanceSample.Contracts;
+using InheritanceSample.Factories;
 
 namespace InheritanceSample.Services
 {
-    public class Course<TIUserFactory> where TIUserFactory : IUserFactory
+    public class BaseCourseService<TIUserFactory> where TIUserFactory : IUserFactory
     {
         private readonly TIUserFactory _iUserFactory;
 
-        public Course(TIUserFactory iUserFactory)
+        public BaseCourseService(TIUserFactory iUserFactory)
         {
             _iUserFactory = iUserFactory;
         }

@@ -1,18 +1,19 @@
-﻿using InheritanceSample.Services;
+﻿using InheritanceSample.Contracts;
+using InheritanceSample.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InheritanceSample.Controllers
 {
     public class CourseController : Controller
     {
-        private readonly ICSharpCourse _iCSharpCourse;
-        private readonly IJavaCourse _iJavaCourse;
+        private readonly ICSharpCourseService _iCSharpCourseService;
+        private readonly IJavaCourseService _iJavaCourseService;
 
-        public CourseController(ICSharpCourse iCSharpCourse,
-                                IJavaCourse iJavaCourse)
+        public CourseController(ICSharpCourseService iCSharpCourseService,
+                                IJavaCourseService iJavaCourseService)
         {
-            _iCSharpCourse = iCSharpCourse;
-            _iJavaCourse = iJavaCourse;
+            _iCSharpCourseService = iCSharpCourseService;
+            _iJavaCourseService = iJavaCourseService;
         }
 
         public IActionResult Index()
@@ -23,9 +24,9 @@ namespace InheritanceSample.Controllers
         [HttpPost]
         public void JavaCourseExample()
         {
-            _iJavaCourse.CreateUser();
-            _iJavaCourse.UpgradeUser();
-            _iJavaCourse.DeleteUser();
+            _iJavaCourseService.CreateUser();
+            _iJavaCourseService.UpgradeUser();
+            _iJavaCourseService.DeleteUser();
         }
 
         //[HttpGet]

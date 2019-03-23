@@ -1,6 +1,4 @@
-﻿using InheritanceSample.Models;
-
-namespace InheritanceSample.Factories
+﻿namespace InheritanceSample.Contracts
 {
     public interface IUserFactory
     {

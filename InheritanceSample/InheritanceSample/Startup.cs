@@ -1,4 +1,5 @@
-﻿using InheritanceSample.Factories;
+﻿using InheritanceSample.Contracts;
+using InheritanceSample.Factories;
 using InheritanceSample.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,8 +31,8 @@ namespace InheritanceSample
 
             services.AddTransient<ICSharpUserFactory, CSharpUserFactory>();
             services.AddTransient<IJavaUserFactory, JavaUserFactory>();
-            services.AddTransient<IJavaCourse, JavaCourse>();
-            services.AddTransient<ICSharpCourse, CSharpCourse>();
+            services.AddTransient<IJavaCourseService, JavaCourseService>();
+            services.AddTransient<ICSharpCourseService, CSharpCourseService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

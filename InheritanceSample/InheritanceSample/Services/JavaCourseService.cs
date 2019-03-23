@@ -1,12 +1,12 @@
-﻿using InheritanceSample.Factories;
+﻿using InheritanceSample.Contracts;
 
 namespace InheritanceSample.Services
 {
-    public class JavaCourse : Course<IJavaUserFactory>, IJavaCourse
+    public class JavaCourseService : BaseCourseService<IJavaUserFactory>, IJavaCourseService
     {
         private readonly IJavaUserFactory _iJavaUserFactory;
 
-        public JavaCourse(IJavaUserFactory iJavaUserFactory) : base(iJavaUserFactory)
+        public JavaCourseService(IJavaUserFactory iJavaUserFactory) : base(iJavaUserFactory)
         {
             _iJavaUserFactory = iJavaUserFactory;
         }

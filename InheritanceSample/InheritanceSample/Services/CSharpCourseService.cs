@@ -1,12 +1,13 @@
-﻿using InheritanceSample.Factories;
+﻿using InheritanceSample.Contracts;
+using InheritanceSample.Factories;
 
 namespace InheritanceSample.Services
 {
-    public class CSharpCourse : Course<ICSharpUserFactory> , ICSharpCourse
+    public class CSharpCourseService : BaseCourseService<ICSharpUserFactory> , ICSharpCourseService
     {
         private readonly ICSharpUserFactory _iCSharpUserFactory;
 
-        public CSharpCourse(ICSharpUserFactory iCSharpUserFactory) : base(iCSharpUserFactory)
+        public CSharpCourseService(ICSharpUserFactory iCSharpUserFactory) : base(iCSharpUserFactory)
         {
             _iCSharpUserFactory = iCSharpUserFactory;
         }

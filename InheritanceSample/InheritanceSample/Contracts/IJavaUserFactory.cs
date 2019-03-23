@@ -1,4 +1,4 @@
-﻿namespace InheritanceSample.Factories
+﻿namespace InheritanceSample.Contracts
 {
     public interface IJavaUserFactory : IUserFactory
     {

@@ -1,6 +1,6 @@
 ﻿namespace InheritanceSample.Services
 {
-    public interface ICourse
+    public interface ICourseService
     {
         bool CreateUser();
         bool DeleteUser();
