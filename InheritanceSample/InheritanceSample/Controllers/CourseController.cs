@@ -30,12 +30,13 @@ namespace InheritanceSample.Controllers
             _iJavaCourseService.GetUserList();
         }
 
-        //[HttpGet]
-        //public IActionResult List()
-        //{
-        //    var model = _booksRepository.GetAll();
-
-        //    return View(model);
-        //}
+        [HttpPost]
+        public void CSharpCourseExample()
+        {
+            _iCSharpCourseService.CreateUser();
+            _iCSharpCourseService.UpdateUser();
+            _iCSharpCourseService.DeleteUser();
+            _iCSharpCourseService.GetUserList();
+        }
     }
 }
