@@ -1,6 +1,6 @@
 ﻿namespace InheritanceSample.Contracts
 {
-    public interface IUserFactory
+    public interface IBaseUserFactory
     {
         bool Create();
         bool Delete();

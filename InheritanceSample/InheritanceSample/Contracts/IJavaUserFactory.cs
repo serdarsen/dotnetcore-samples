@@ -1,6 +1,6 @@
 ﻿namespace InheritanceSample.Contracts
 {
-    public interface IJavaUserFactory : IUserFactory
+    public interface IJavaUserFactory : IBaseUserFactory
     {
         void Upgrade();
     }

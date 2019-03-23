@@ -3,7 +3,7 @@ using InheritanceSample.Contracts;
 
 namespace InheritanceSample.Factories
 {
-    public class JavaUserFactory : UserFactory, IJavaUserFactory
+    public class JavaUserFactory : BaseUserFactory, IJavaUserFactory
     {
         public void Upgrade()
         {

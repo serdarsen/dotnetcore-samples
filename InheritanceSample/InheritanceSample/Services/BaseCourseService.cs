@@ -3,23 +3,23 @@ using InheritanceSample.Factories;
 
 namespace InheritanceSample.Services
 {
-    public class BaseCourseService<TIUserFactory> where TIUserFactory : IUserFactory
+    public class BaseCourseService<TIUserFactory> where TIUserFactory : IBaseUserFactory
     {
-        private readonly TIUserFactory _iUserFactory;
+        private readonly TIUserFactory _iBaseUserFactory;
 
-        public BaseCourseService(TIUserFactory iUserFactory)
+        public BaseCourseService(TIUserFactory iBaseUserFactory)
         {
-            _iUserFactory = iUserFactory;
+            _iBaseUserFactory = iBaseUserFactory;
         }
 
         public bool CreateUser()
         {
-            return _iUserFactory.Create();
+            return _iBaseUserFactory.Create();
         }
 
         public bool DeleteUser()
         {
-            return _iUserFactory.Delete();
+            return _iBaseUserFactory.Delete();
         }
     }
 }

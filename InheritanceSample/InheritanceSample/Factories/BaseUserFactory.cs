@@ -3,18 +3,18 @@ using InheritanceSample.Contracts;
 
 namespace InheritanceSample.Factories
 {
-    public class UserFactory : IUserFactory
+    public class BaseUserFactory : IBaseUserFactory
     {
         public bool Create()
         {
-            Console.WriteLine("UserFactory Create");
+            Console.WriteLine("Create");
 
             return true;
         }
 
         public bool Delete()
         {
-            Console.WriteLine("UserFactory Delete");
+            Console.WriteLine("Delete");
 
             return true;
         }

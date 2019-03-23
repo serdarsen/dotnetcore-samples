@@ -1,6 +1,6 @@
 ﻿namespace InheritanceSample.Services
 {
-    public interface IJavaCourseService : ICourseService
+    public interface IJavaCourseService : IBaseCourseService
     {
         void UpgradeUser();
     }

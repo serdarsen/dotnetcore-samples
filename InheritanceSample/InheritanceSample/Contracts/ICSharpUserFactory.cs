@@ -2,7 +2,7 @@
 
 namespace InheritanceSample.Factories
 {
-    public interface ICSharpUserFactory : IUserFactory
+    public interface ICSharpUserFactory : IBaseUserFactory
     {
         void Update();
     }

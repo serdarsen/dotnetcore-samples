@@ -2,7 +2,7 @@
 
 namespace InheritanceSample.Contracts
 {
-    public interface ICSharpCourseService : ICourseService
+    public interface ICSharpCourseService : IBaseCourseService
     {
         void UpdateUser();
     }
