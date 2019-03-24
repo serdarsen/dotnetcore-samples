@@ -2,7 +2,7 @@
 
 namespace InheritanceSample.Services
 {
-    public class BaseCourseService<TIBaseUserFactory, TIBaseUserRepository> 
+    public class BaseCourseService<TIBaseUserFactory, TIBaseUserRepository> : IBaseCourseService
                                    where TIBaseUserFactory : IBaseUserFactory
                                    where TIBaseUserRepository : IBaseUserRepository
                                                                     
