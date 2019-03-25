@@ -16,7 +16,7 @@ namespace InheritanceSample.Services
             _iBaseUserRepository = iBaseUserRepository;
         }
 
-        public bool CreateUser()
+        public virtual bool CreateUser()
         {
             return _iBaseUserFactory.Create();
         }

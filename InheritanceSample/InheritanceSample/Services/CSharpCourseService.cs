@@ -16,6 +16,11 @@ namespace InheritanceSample.Services
             _iCSharpUserRepository = iCSharpUserRepository;
         }
 
+        public override bool CreateUser()
+        {
+            return _iCSharpUserFactory.Create();
+        }
+
         public void UpdateUser()
         {
             _iCSharpUserFactory.Update();
