@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInjectorSample", "SimpleInjectorSample\SimpleInjectorSample.csproj", "{EE3D904A-E185-4018-A584-BFACAEFBF319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleInjectorSample", "SimpleInjectorSample\SimpleInjectorSample.csproj", "{EE3D904A-E185-4018-A584-BFACAEFBF319}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInjectorSample.NUnitTests", "SimpleInjectorSample.NUnitTests\SimpleInjectorSample.NUnitTests.csproj", "{654CEAC9-2D08-4343-A33E-C4AC9389ED49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EE3D904A-E185-4018-A584-BFACAEFBF319}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE3D904A-E185-4018-A584-BFACAEFBF319}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE3D904A-E185-4018-A584-BFACAEFBF319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{654CEAC9-2D08-4343-A33E-C4AC9389ED49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{654CEAC9-2D08-4343-A33E-C4AC9389ED49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{654CEAC9-2D08-4343-A33E-C4AC9389ED49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{654CEAC9-2D08-4343-A33E-C4AC9389ED49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
