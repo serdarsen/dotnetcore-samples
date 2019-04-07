@@ -1,5 +1,6 @@
 ﻿using InheritanceSample.Contracts;
 using InheritanceSample.Factories;
+using InheritanceSample.Repositories;
 using InheritanceSample.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,8 @@ namespace InheritanceSample
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddTransient<ICSharpUserRepository, CSharpUserRepository>();
+            services.AddTransient<IJavaUserRepository, JavaUserRepository>();
             services.AddTransient<ICSharpUserFactory, CSharpUserFactory>();
             services.AddTransient<IJavaUserFactory, JavaUserFactory>();
             services.AddTransient<IJavaCourseService, JavaCourseService>();

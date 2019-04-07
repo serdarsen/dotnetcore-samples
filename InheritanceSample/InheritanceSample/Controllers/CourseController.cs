@@ -31,12 +31,24 @@ namespace InheritanceSample.Controllers
         }
 
         [HttpPost]
-        public void CSharpCourseExample()
+        public ViewResult CSharpCourseExample()
         {
             _iCSharpCourseService.CreateUser();
             _iCSharpCourseService.UpdateUser();
             _iCSharpCourseService.DeleteUser();
             _iCSharpCourseService.GetUserList();
+
+            return null;
         }
+
+
+        public IActionResult CSharp()
+        {
+
+            _iCSharpCourseService.DeleteUser();
+
+            return View();
+        }
+
     }
 }
