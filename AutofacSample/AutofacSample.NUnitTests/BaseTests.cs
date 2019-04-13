@@ -10,7 +10,7 @@ namespace AutofacSample.NUnitTests
         private IContainer Container { get; }
         protected ILifetimeScope Scope { get; }
         protected Mock<IBookService> MockIBookService { get; }
-        protected Mock<IBookRepository> MockIBooksRepository { get; }
+        protected Mock<IBookRepository> MockIBookRepository { get; }
         protected Mock<ILogger> MockILogger { get; }
 
         public BaseTests()
@@ -18,7 +18,7 @@ namespace AutofacSample.NUnitTests
             Container = Configure();
             Scope = Container.BeginLifetimeScope();
             MockIBookService = new Mock<IBookService>();
-            MockIBooksRepository = new Mock<IBookRepository>();
+            MockIBookRepository = new Mock<IBookRepository>();
             MockILogger = new Mock<ILogger>();
         }
 
@@ -28,22 +28,22 @@ namespace AutofacSample.NUnitTests
 
             builder.RegisterType<BookService>().As<IBookService>();
 
-            builder.Register(c => MockIBooksRepository.Object).As<IBookRepository>();
+            builder.Register(c => MockIBookRepository.Object).As<IBookRepository>();
             
             builder.Register(c => MockILogger.Object).As<ILogger>();
 
             return builder.Build();
         }
-
-        public void SetupScenarioBookRepositoryGetByIdReturnsBook10()
+        
+        public void Setup_BookRepository_GetById_Returns_Book10()
         {
-            MockIBooksRepository.Setup(x => x.GetById(It.IsAny<int>()))
+            MockIBookRepository.Setup(x => x.GetById(It.IsAny<int>()))
                                 .Returns(GetFakeBook10());
         }
 
-        public void VerifyScenarioBookRepositoryGetByIdInt()
+        public void Verify_BookRepository_GetByIdInt()
         {
-            MockIBooksRepository.Verify(x => x.GetById(It.IsAny<int>()));
+            MockIBookRepository.Verify(x => x.GetById(It.IsAny<int>()));
         }
 
         public Book GetFakeBook10()

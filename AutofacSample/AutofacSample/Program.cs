@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Reflection;
 using Autofac;
 
 namespace AutofacSample
@@ -7,13 +9,9 @@ namespace AutofacSample
     {
         static void Main(string[] args)
         {
-            var container = ContainerConfig.Configure();
-
-            using (var scope = container.BeginLifetimeScope())
-            {
-                var application = scope.Resolve<IApplication>();
-                application.Run();
-            }
+            var application = new Application();
+            var bookService = application.Scope.Resolve<IBookService>();
+            bookService.GetById(1);
         }
     }
 }

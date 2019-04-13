@@ -19,14 +19,14 @@ namespace AutofacSample.NUnitTests
         public void BookService_GetById()
         {
             // arrange
-            SetupScenarioBookRepositoryGetByIdReturnsBook10();
+            Setup_BookRepository_GetById_Returns_Book10();
 
             // act
             var result = SystemUnderTest.GetById(1);
             
             // assert
             result.Name.ShouldBe("Book 10");
-            VerifyScenarioBookRepositoryGetByIdInt();
+            Verify_BookRepository_GetByIdInt();
         }
     }
 }
