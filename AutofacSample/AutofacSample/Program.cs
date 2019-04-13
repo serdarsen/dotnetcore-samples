@@ -1,4 +1,5 @@
 ﻿using System;
+using Autofac;
 
 namespace AutofacSample
 {
@@ -6,7 +7,13 @@ namespace AutofacSample
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var container = ContainerConfig.Configure();
+
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var application = scope.Resolve<IApplication>();
+                application.Run();
+            }
         }
     }
 }
