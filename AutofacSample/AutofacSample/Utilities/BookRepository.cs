@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AutofacSample.Contracts;
 
 namespace AutofacSample.Utilities
 {

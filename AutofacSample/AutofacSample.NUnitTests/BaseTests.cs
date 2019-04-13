@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using AutofacSample.Contracts;
 using AutofacSample.Utilities;
 using Moq;
 using NUnit.Framework;

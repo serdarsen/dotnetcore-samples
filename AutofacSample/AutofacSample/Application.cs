@@ -24,9 +24,10 @@ namespace AutofacSample
             var dataAccess = Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(dataAccess)
-                .Where(x => x.Namespace.Contains("Utilities"))
-                .As(x => x.GetInterfaces()
-                    .FirstOrDefault(y => y.Name == "I" + x.Name));
+                .Where(c => c.Namespace.Contains("Utilities"))
+                .As(c => c.GetInterfaces()
+                          .Where(i => i.Namespace.Contains("Contracts"))
+                          .FirstOrDefault(i => i.Name == "I" + c.Name));
 
             return builder.Build();
         }

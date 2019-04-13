@@ -9,8 +9,4 @@
     <PackageReference Include="Autofac" Version="4.9.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Contracts\" />
-  </ItemGroup>
-
 </Project>
