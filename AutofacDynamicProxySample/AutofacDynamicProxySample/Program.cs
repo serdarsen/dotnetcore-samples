@@ -1,4 +1,5 @@
 ﻿using System;
+
 using Autofac;
 using Autofac.Extras.DynamicProxy;
 
@@ -12,16 +13,20 @@ namespace AutofacDynamicProxySample
             var builder = new ContainerBuilder();
 
             builder.Register(i => new Logger(Console.Out));
+            builder.Register(i => new MemoryCaching());
             builder.RegisterType<Calculator>()
                    .As<ICalculator>()
                    .EnableInterfaceInterceptors()
-                   .InterceptedBy(typeof(Logger));
+                   .InterceptedBy(typeof(Logger))
+                   .InterceptedBy(typeof(MemoryCaching));
 
             var container = builder.Build();
 
             // Run calculator
             var calculator = container.Resolve<ICalculator>();
-            calculator.Add(8, 9);
+            calculator.Add(85, 95);
+            calculator.Add(85, 95);
+            calculator.Add(442, 558);
         }
     }
 }
