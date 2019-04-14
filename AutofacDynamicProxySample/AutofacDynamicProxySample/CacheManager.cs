@@ -6,13 +6,13 @@ using Castle.DynamicProxy;
 
 namespace AutofacDynamicProxySample
 {
-    public class MemoryCaching : IInterceptor
+    public class CacheManager : IInterceptor
     {
         private Dictionary<string, object> cache = new Dictionary<string, object>();
 
         public void Intercept(IInvocation invocation)
         {
-            var name = $"{invocation.Method.DeclaringType}_{invocation.Method.Name}";
+            var name = $"{invocation.Method.DeclaringType}.{invocation.Method.Name}";
 
             var args = string.Join(", ", invocation.Arguments.Select(a => (a ?? "").ToString()));
 
