@@ -2,6 +2,7 @@ using Autofac;
 using AutofacSample.Utilities;
 using NUnit.Framework;
 using Shouldly;
+using static AutofacSample.NUnitTests.FakeDataHelper;
 
 namespace AutofacSample.NUnitTests
 {
@@ -12,21 +13,22 @@ namespace AutofacSample.NUnitTests
         [SetUp]
         public void run_before_every_test()
         {
-            SystemUnderTest = Scope.Resolve<IBookService>();
+            SystemUnderTest = Container.Resolve<IBookService>();
         }
 
         [Test]
         public void BookService_GetById()
         {
             // arrange
-            Setup_BookRepository_GetById_Returns_Book10();
+            var book10 = GetFakeBook10();
+            MockIBookRepository.Setup_GetById_Returns_Book10();
 
             // act
             var result = SystemUnderTest.GetById(1);
             
             // assert
-            result.Name.ShouldBe("Book 10");
-            Verify_BookRepository_GetByIdInt();
+            result.Name.ShouldBe(book10.Name);
+            MockIBookRepository.Verify_GetById();
         }
     }
 }

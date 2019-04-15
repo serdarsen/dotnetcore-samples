@@ -24,6 +24,8 @@ namespace AutofacDynamicProxySample
             var name = $"{invocation.Method.DeclaringType}.{invocation.Method.Name}";
 
             var args = string.Join(", ", invocation.Arguments.Select(a => (a ?? "").ToString()));
+            
+            var baseType = invocation.Arguments[0].GetType().BaseType; // loop edilecek
 
             _writer.WriteLine($"Calling: {name}");
             _writer.WriteLine($"Args: {args}");

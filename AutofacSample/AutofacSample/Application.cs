@@ -6,13 +6,11 @@ namespace AutofacSample
 {
     public class Application
     {
-        private IContainer Container { get; }
-        public ILifetimeScope Scope { get; }
+        public IContainer Container { get; }
 
         public Application()
         {
             Container = Configure();
-            Scope = Container.BeginLifetimeScope();
         }
 
         public IContainer Configure()

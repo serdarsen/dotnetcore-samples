@@ -10,7 +10,7 @@ namespace AutofacSample
         static void Main(string[] args)
         {
             var application = new Application();
-            var bookService = application.Scope.Resolve<IBookService>();
+            var bookService = application.Container.Resolve<IBookService>();
             bookService.GetById(1);
         }
     }
