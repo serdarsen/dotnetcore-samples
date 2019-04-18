@@ -6,19 +6,19 @@ using NUnit.Framework;
 
 namespace AutofacSample.NUnitTests
 {
-    public class BaseTests
+    public abstract class BaseTests
     {
         protected IContainer Container { get; }
         protected Mock<IBookService> MockIBookService { get; }
         protected Mock<IBookRepository> MockIBookRepository { get; }
         protected Mock<ILogger> MockILogger { get; }
 
-        public BaseTests()
+        protected BaseTests()
         {
-            Container = Configure();
             MockIBookService = new Mock<IBookService>();
             MockIBookRepository = new Mock<IBookRepository>();
             MockILogger = new Mock<ILogger>();
+            Container = Configure();
         }
 
         public IContainer Configure()
