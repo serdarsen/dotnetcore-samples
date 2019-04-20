@@ -14,10 +14,13 @@ namespace AutofacDynamicProxySample
 
             builder.Register(i => new Logger(Console.Out));
             builder.Register(i => new CacheManager());
+
             builder.RegisterType<Calculator>()
                    .As<ICalculator>()
+
                    .EnableInterfaceInterceptors()
                    .InterceptedBy(typeof(Logger))
+
                    .InterceptedBy(typeof(CacheManager));
 
             var container = builder.Build();

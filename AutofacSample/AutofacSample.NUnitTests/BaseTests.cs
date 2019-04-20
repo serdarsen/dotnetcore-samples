@@ -6,57 +6,32 @@ using NUnit.Framework;
 
 namespace AutofacSample.NUnitTests
 {
-    public class BaseTests
+    public abstract class BaseTests
     {
-        private IContainer Container { get; }
-        protected ILifetimeScope Scope { get; }
+        protected IContainer Container { get; }
         protected Mock<IBookService> MockIBookService { get; }
         protected Mock<IBookRepository> MockIBookRepository { get; }
         protected Mock<ILogger> MockILogger { get; }
 
-        public BaseTests()
+        protected BaseTests()
         {
-            Container = Configure();
-            Scope = Container.BeginLifetimeScope();
             MockIBookService = new Mock<IBookService>();
             MockIBookRepository = new Mock<IBookRepository>();
             MockILogger = new Mock<ILogger>();
+            Container = Configure();
         }
 
         public IContainer Configure()
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<BookService>().As<IBookService>();
+            builder.Register(c => MockIBookRepository.Object).As<IBookRepository>().InstancePerDependency();
 
-            builder.Register(c => MockIBookRepository.Object).As<IBookRepository>();
-            
-            builder.Register(c => MockILogger.Object).As<ILogger>();
+            builder.Register(c => MockILogger.Object).As<ILogger>().InstancePerDependency();
+
+            builder.RegisterType<BookService>().As<IBookService>().InstancePerDependency();
 
             return builder.Build();
-        }
-        
-        public void Setup_BookRepository_GetById_Returns_Book10()
-        {
-            MockIBookRepository.Setup(x => x.GetById(It.IsAny<int>()))
-                                .Returns(GetFakeBook10());
-        }
-
-        public void Verify_BookRepository_GetByIdInt()
-        {
-            MockIBookRepository.Verify(x => x.GetById(It.IsAny<int>()));
-        }
-
-        public Book GetFakeBook10()
-        {
-            var book = new Book()
-            {
-                Id = 10,
-                Name = "Book 10",
-                ISBN = "ISBN10"
-            };
-
-            return book;
         }
     }
 }
