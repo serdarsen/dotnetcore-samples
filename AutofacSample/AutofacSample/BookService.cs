@@ -1,5 +1,5 @@
-﻿using AutofacSample.Contracts;
-using AutofacSample.Utilities;
+﻿using AutofacSample.Utilities;
+using AutofacSample.Utilities.Contracts;
 
 namespace AutofacSample
 {

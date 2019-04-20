@@ -1,5 +1,6 @@
 ﻿using System;
-using AutofacSample.Contracts;
+
+using AutofacSample.Utilities.Contracts;
 
 namespace AutofacSample.Utilities
 {

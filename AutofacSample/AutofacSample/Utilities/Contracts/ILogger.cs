@@ -1,4 +1,4 @@
-﻿namespace AutofacSample.Contracts
+﻿namespace AutofacSample.Utilities.Contracts
 {
     public interface ILogger
     {

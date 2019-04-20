@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AutofacSample.Contracts
+namespace AutofacSample.Utilities.Contracts
 {
     public interface IBookRepository
     {
